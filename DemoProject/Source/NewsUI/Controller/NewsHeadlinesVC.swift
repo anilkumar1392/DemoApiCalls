@@ -12,8 +12,14 @@ class NewsHeadlinesVC: UIViewController {
     //MARK: Properties
     @IBOutlet weak var tableView: UITableView!
     var newsViewModel: NewsViewModel?{
+        didSet { bind()}
+    }
+    
+    var tableModel = [NewsHeadlineCellController]() {
         didSet {
-            bind()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -35,21 +41,17 @@ extension NewsHeadlinesVC {
     }
     
     func bind(){
-        
     }
 }
 
 //MARK: UITableViewDataSource
 extension NewsHeadlinesVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        return tableModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell");
-        cell.textLabel?.text = "Anil"
-        cell.accessoryType = .disclosureIndicator
-        return cell
+        return tableModel[indexPath.row].view(in: tableView)
     }
 }
 
@@ -57,6 +59,10 @@ extension NewsHeadlinesVC : UITableViewDataSource {
 extension NewsHeadlinesVC : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }
 

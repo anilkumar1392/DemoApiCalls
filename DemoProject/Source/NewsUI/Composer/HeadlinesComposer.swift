@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class HeadlineComposer {
+final class HeadlineVCComposer {
     private init() {}
     public static func headlinesComposedWith(newsLoader: NewsLoader) -> NewsHeadlinesVC {
         let newsViewModel = NewsViewModel(newsLoader: newsLoader)
@@ -19,7 +19,9 @@ final class HeadlineComposer {
     
     private static func adaptNewsToCellType(forwardingTo controller : NewsHeadlinesVC) -> ([Article]) -> Void{
         return { [weak controller] news in
-            print(news)
+            controller?.tableModel = news.map { model in
+                NewsHeadlineCellController(viewModel: NewsHeadline(headline: model.title ?? ""))
+            }
         }
     }
 }
