@@ -9,5 +9,4 @@ import UIKit
 
 class NewsHeadlineCell: UITableViewCell {
     @IBOutlet weak var headlineLabel: UILabel!
-    
 }

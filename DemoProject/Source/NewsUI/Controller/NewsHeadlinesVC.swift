@@ -35,7 +35,6 @@ class NewsHeadlinesVC: UIViewController {
 //MARK: Setup View
 extension NewsHeadlinesVC {
     func setupView(){
-        self.title = "Home"
         self.tableView.estimatedRowHeight = 80
         self.tableView.rowHeight = UITableView.automaticDimension
     }
