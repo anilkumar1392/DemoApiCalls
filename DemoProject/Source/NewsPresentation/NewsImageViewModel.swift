@@ -41,8 +41,7 @@ final class NewsImageViewModel<Image> {
 
     func loadImageData(){
         guard let imageUrl = model.urlToImage else {return}
-        guard let urlRequest = URL(string: imageUrl) else {return}
-        task = imageLoader.loadImageData(from: urlRequest, completion: { [weak self] (result) in
+        task = imageLoader.loadImageData(from: imageUrl, completion: { [weak self] (result) in
             self?.handleResult(result)
         })
     }

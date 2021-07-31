@@ -80,7 +80,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oi1-0k-ssp">
                                 <rect key="frame" x="0.0" y="44" width="414" height="214"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hAX-Qv-hNo">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hAX-Qv-hNo">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="214"/>
                                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                                     </imageView>

@@ -28,16 +28,22 @@ class NewsDetailVC: UIViewController {
 
 extension NewsDetailVC {
     func setupView(){
+        loadImage()
         DispatchQueue.main.async {
             self.headingLabel.text = self.viewModel?.title
             self.subHeadingLabel.text = "\(kBy) \(self.viewModel?.author ?? "")"
             self.descLabel.text = self.viewModel?.description
             self.view.layoutIfNeeded()
         }
+        viewModel?.onImageLoad = { [weak self] image in
+            DispatchQueue.main.async {
+                self?.backgroundImageView.setImageAnimated(image)
+            }
+        }
     }
     
     func loadImage(){
-        
+        viewModel?.loadImageData()
     }
 }
 
