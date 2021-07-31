@@ -32,6 +32,7 @@
 		044AA11626B53A81002AB7C1 /* NewsDetailVCComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AA11526B53A81002AB7C1 /* NewsDetailVCComposer.swift */; };
 		044AA11B26B53AE7002AB7C1 /* NewsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AA11A26B53AE7002AB7C1 /* NewsDetailVC.swift */; };
 		049B7BE326B560DB00B980F6 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049B7BE226B560DB00B980F6 /* ImageLoader.swift */; };
+		049B7BE826B56BF700B980F6 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 049B7BE726B56BF700B980F6 /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		044AA11526B53A81002AB7C1 /* NewsDetailVCComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailVCComposer.swift; sourceTree = "<group>"; };
 		044AA11A26B53AE7002AB7C1 /* NewsDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailVC.swift; sourceTree = "<group>"; };
 		049B7BE226B560DB00B980F6 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		049B7BE726B56BF700B980F6 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		044AA07126B50F65002AB7C1 /* DemoProject */ = {
 			isa = PBXGroup;
 			children = (
+				049B7BE726B56BF700B980F6 /* Readme.md */,
 				044AA0E726B51C5B002AB7C1 /* ApiHelper */,
 				044AA0E126B51A68002AB7C1 /* ServiceHelper */,
 				044AA0D226B51868002AB7C1 /* NewsFeature */,
@@ -380,6 +383,7 @@
 			files = (
 				044AA08226B50F66002AB7C1 /* LaunchScreen.storyboard in Resources */,
 				044AA07F26B50F66002AB7C1 /* Assets.xcassets in Resources */,
+				049B7BE826B56BF700B980F6 /* Readme.md in Resources */,
 				044AA07A26B50F65002AB7C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
