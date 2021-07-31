@@ -9,21 +9,21 @@ import Foundation
 import UIKit
 
 class NewsHeadlineCellController {
-    private var viewModel: NewsArticleViewModel? 
+    private var viewModel: NewsImageViewModel<UIImage>
     private var headlineCell: NewsHeadlineCell?
     
-    init(viewModel: NewsArticleViewModel) {
+    init(viewModel: NewsImageViewModel<UIImage>) {
         self.viewModel = viewModel
     }
     
     func view(in tableView: UITableView) -> UITableViewCell {
         let cell : NewsHeadlineCell = tableView.dequeueReusableCell()
-        cell.headlineLabel.text = viewModel?.title
+        cell.headlineLabel.text = viewModel.title
+        cell.selectionStyle = .none
         return cell
     }
     
-    func onSelection() -> NewsArticleViewModel?{
-        guard let model = viewModel else {return nil}
-        return model
+    func onSelection() -> NewsImageViewModel<UIImage>{
+        return viewModel
     }
 }

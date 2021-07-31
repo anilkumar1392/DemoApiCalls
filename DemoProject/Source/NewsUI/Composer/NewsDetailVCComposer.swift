@@ -9,16 +9,16 @@ import Foundation
 import UIKit
 
 final class NewsDetailVCComposer {
-    static func detailsComposedWith(viewModel: NewsArticleViewModel) -> NewsDetailVC {
+    static func detailsComposedWith(viewModel: NewsImageViewModel<UIImage>) -> NewsDetailVC {
         let vc = NewsDetailVC.make(viewModel: viewModel)
         return vc
     }
 }
 
 extension NewsDetailVC {
-    static func make(viewModel : NewsArticleViewModel) -> NewsDetailVC {
+    static func make(viewModel : NewsImageViewModel<UIImage>) -> NewsDetailVC {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let detailVC = storyboard.instantiateViewController(withIdentifier: "NewsHeadlinesVC") as! NewsDetailVC
+        let detailVC = storyboard.instantiateViewController(withIdentifier: "NewsDetailVC") as! NewsDetailVC
         detailVC.viewModel = viewModel
         return detailVC
     }

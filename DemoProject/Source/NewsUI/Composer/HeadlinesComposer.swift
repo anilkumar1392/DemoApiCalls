@@ -10,17 +10,17 @@ import UIKit
 
 final class HeadlineVCComposer {
     private init() {}
-    public static func headlinesComposedWith(newsLoader: NewsLoader) -> NewsHeadlinesVC {
+    public static func headlinesComposedWith(newsLoader: NewsLoader, imageLoader: NewsImageDataLoader) -> NewsHeadlinesVC {
         let newsViewModel = NewsViewModel(newsLoader: newsLoader)
         let vc = NewsHeadlinesVC.make(viewModel: newsViewModel)
-        newsViewModel.onNewsLoad = adaptNewsToCellType(forwardingTo: vc)
+        newsViewModel.onNewsLoad = adaptNewsToCellType(forwardingTo: vc, imageLoader: imageLoader)
         return vc
     }
     
-    private static func adaptNewsToCellType(forwardingTo controller : NewsHeadlinesVC) -> ([Article]) -> Void{
+    private static func adaptNewsToCellType(forwardingTo controller : NewsHeadlinesVC, imageLoader: NewsImageDataLoader) -> ([Article]) -> Void{
         return { [weak controller] news in
             controller?.tableModel = news.map { model in
-                NewsHeadlineCellController(viewModel:NewsArticleViewModel(author: model.author ?? "", title: model.title ?? "", description: model.articleDescription ?? "", url: model.url ?? "", urlToImage: model.urlToImage ?? "", publishedAt: model.publishedAt ?? "", content: model.content ?? ""))
+                NewsHeadlineCellController(viewModel: NewsImageViewModel(model: model, imageLoader: imageLoader, imageTransformer: UIImage.init))
             }
         }
     }
