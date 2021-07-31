@@ -8,7 +8,7 @@
 import Foundation
 
 class NewsApiAdapter: NewsLoader{
-    func load(complition: @escaping (Result) -> Void) {
-        <#code#>
+    func load(complition: @escaping (NewsLoader.Result) -> Void) {
+        print("I'm here")
     }
 }

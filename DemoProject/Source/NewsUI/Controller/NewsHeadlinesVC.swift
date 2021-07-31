@@ -11,12 +11,18 @@ class NewsHeadlinesVC: UIViewController {
 
     //MARK: Properties
     @IBOutlet weak var tableView: UITableView!
-   
+    var newsViewModel: NewsViewModel?{
+        didSet {
+            bind()
+        }
+    }
+    
     //MARK: View life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        loadNews()
     }
 }
 
@@ -26,6 +32,10 @@ extension NewsHeadlinesVC {
         self.title = "Home"
         self.tableView.estimatedRowHeight = 80
         self.tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    func bind(){
+        
     }
 }
 
@@ -50,4 +60,9 @@ extension NewsHeadlinesVC : UITableViewDelegate {
     }
 }
 
-
+//MARK: Load News
+extension NewsHeadlinesVC {
+    func loadNews(){
+        newsViewModel?.loadNews()
+    }
+}

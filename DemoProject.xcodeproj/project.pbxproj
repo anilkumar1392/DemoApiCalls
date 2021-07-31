@@ -23,6 +23,7 @@
 		044AA0D426B51884002AB7C1 /* NewsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AA0D326B51884002AB7C1 /* NewsLoader.swift */; };
 		044AA0D926B51956002AB7C1 /* NewsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AA0D826B51956002AB7C1 /* NewsAdapter.swift */; };
 		044AA0E326B51A80002AB7C1 /* ServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AA0E226B51A80002AB7C1 /* ServiceHelper.swift */; };
+		044AA0E926B51C71002AB7C1 /* NewsApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AA0E826B51C71002AB7C1 /* NewsApiHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		044AA0D326B51884002AB7C1 /* NewsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLoader.swift; sourceTree = "<group>"; };
 		044AA0D826B51956002AB7C1 /* NewsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAdapter.swift; sourceTree = "<group>"; };
 		044AA0E226B51A80002AB7C1 /* ServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHelper.swift; sourceTree = "<group>"; };
+		044AA0E826B51C71002AB7C1 /* NewsApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApiHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		044AA07126B50F65002AB7C1 /* DemoProject */ = {
 			isa = PBXGroup;
 			children = (
+				044AA0E726B51C5B002AB7C1 /* ApiHelper */,
 				044AA0E126B51A68002AB7C1 /* ServiceHelper */,
 				044AA0D226B51868002AB7C1 /* NewsFeature */,
 				044AA0D126B5180B002AB7C1 /* HelperClass */,
@@ -238,6 +241,14 @@
 				044AA0E226B51A80002AB7C1 /* ServiceHelper.swift */,
 			);
 			path = ServiceHelper;
+			sourceTree = "<group>";
+		};
+		044AA0E726B51C5B002AB7C1 /* ApiHelper */ = {
+			isa = PBXGroup;
+			children = (
+				044AA0E826B51C71002AB7C1 /* NewsApiHelper.swift */,
+			);
+			path = ApiHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +390,7 @@
 				044AA0D426B51884002AB7C1 /* NewsLoader.swift in Sources */,
 				044AA07526B50F65002AB7C1 /* SceneDelegate.swift in Sources */,
 				044AA0D926B51956002AB7C1 /* NewsAdapter.swift in Sources */,
+				044AA0E926B51C71002AB7C1 /* NewsApiHelper.swift in Sources */,
 				044AA0B926B511C1002AB7C1 /* NewsHeadlinesVC.swift in Sources */,
 				044AA0E326B51A80002AB7C1 /* ServiceHelper.swift in Sources */,
 			);

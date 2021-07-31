@@ -61,7 +61,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate {
     func setupWindowNavigation(){
-        navController = UINavigationController(rootViewController: HeadlineComposer.headlinesComposedWith())
+        navController = UINavigationController(rootViewController: HeadlineComposer.headlinesComposedWith(newsLoader: NewsApiHelper()))
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }
