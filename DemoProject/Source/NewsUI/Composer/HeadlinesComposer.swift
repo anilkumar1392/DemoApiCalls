@@ -13,7 +13,14 @@ final class HeadlineComposer {
     public static func headlinesComposedWith(newsLoader: NewsLoader) -> NewsHeadlinesVC {
         let newsViewModel = NewsViewModel(newsLoader: newsLoader)
         let vc = NewsHeadlinesVC.make(viewModel: newsViewModel)
+        newsViewModel.onNewsLoad = adaptNewsToCellType(forwardingTo: vc)
         return vc
+    }
+    
+    private static func adaptNewsToCellType(forwardingTo controller : NewsHeadlinesVC) -> ([Article]) -> Void{
+        return { [weak controller] news in
+            print(news)
+        }
     }
 }
 

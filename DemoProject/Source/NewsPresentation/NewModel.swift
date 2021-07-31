@@ -8,23 +8,28 @@
 import Foundation
 
 struct NewsResult: Decodable {
-    var status: String?
-    var totalResults: Int?
-    var articles: [Articles]
+    let status: String?
+    let totalResults: Int?
+    let articles: [Article]?
 }
 
-struct Articles: Decodable{
-    var author : String?
-    var title : String?
-    var description : String?
-    var url : String?
-    var urlToImage : String?
-    var publishedAt : String?
-    var content : String?
-    var source : Source
+struct Article: Decodable{
+    let source: Source
+    let author: String?
+    let title, articleDescription: String?
+    let url: String?
+    let urlToImage: String?
+    let publishedAt: String?
+    let content: String?
+
+    enum CodingKeys: String, CodingKey {
+        case source, author, title
+        case articleDescription = "description"
+        case url, urlToImage, publishedAt, content
+    }
 }
 
 struct Source: Decodable{
-    var id: Int?
-    var name: String?
+    let id: String?
+    let name: String?
 }

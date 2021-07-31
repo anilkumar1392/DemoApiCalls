@@ -14,9 +14,10 @@ class NewsApiHelper: NewsLoader{
             switch result {
             case .success(let data):
                 do {
-                    let result = try JSONDecoder().decode([NewsResult].self, from: data as! Data)
-                    complition(.success(result))
+                    let results = try JSONDecoder().decode(NewsResult.self, from: data as! Data)
+                    complition(.success(results.articles ?? []))
                 } catch {
+                    print(error)
                     complition(.failure(error))
                 }
             case .failure(let error):

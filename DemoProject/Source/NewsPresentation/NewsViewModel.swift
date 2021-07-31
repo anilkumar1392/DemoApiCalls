@@ -15,13 +15,10 @@ class NewsViewModel {
         self.newsLoader = newsLoader
     }
     
-    var onNewsLoad: Observer<[NewsResult]>?
+    var onNewsLoad: Observer<[Article]>?
     
     func loadNews(){
-        print("Calling")
         newsLoader.load {[weak self](result) in
-            print("reult")
-
             if let news = try? result.get(){
                 self?.onNewsLoad?(news)
             }
