@@ -61,7 +61,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate {
     func setupWindowNavigation(){
-        navController = UINavigationController(rootViewController: UIViewController())
+        navController = UINavigationController(rootViewController: HeadlineComposer.headlinesComposedWith())
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }
