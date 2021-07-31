@@ -20,7 +20,7 @@ final class HeadlineVCComposer {
     private static func adaptNewsToCellType(forwardingTo controller : NewsHeadlinesVC) -> ([Article]) -> Void{
         return { [weak controller] news in
             controller?.tableModel = news.map { model in
-                NewsHeadlineCellController(viewModel: NewsHeadline(headline: model.title ?? ""))
+                NewsHeadlineCellController(viewModel:NewsArticleViewModel(author: model.author ?? "", title: model.title ?? "", description: model.articleDescription ?? "", url: model.url ?? "", urlToImage: model.urlToImage ?? "", publishedAt: model.publishedAt ?? "", content: model.content ?? ""))
             }
         }
     }

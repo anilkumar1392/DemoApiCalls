@@ -62,7 +62,10 @@ extension NewsHeadlinesVC : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if let viewModel = tableModel[indexPath.row].onSelection() {
+            let vc = NewsDetailVCComposer.detailsComposedWith(viewModel:viewModel)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
