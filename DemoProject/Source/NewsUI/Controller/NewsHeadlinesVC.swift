@@ -28,6 +28,7 @@ class NewsHeadlinesVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         loadNews()
     }
 }
@@ -69,6 +70,7 @@ extension NewsHeadlinesVC : UITableViewDelegate {
 //MARK: Load News
 extension NewsHeadlinesVC {
     func loadNews(){
+        newsViewModel?.loadDataFromDB()
         newsViewModel?.loadNews()
     }
 }

@@ -40,3 +40,13 @@ extension ArticleDBHelper {
         }
     }
 }
+
+extension ArticleDBHelper {
+    class func mapDBArticlesToArticle(articles: [Articles]) -> [Article]{
+        var articleArr = [Article]()
+        for article in articles {
+            articleArr.append(Article(source: nil, author: article.author, title: article.title, articleDescription: article.articleDescription, url: article.url, urlToImage: article.urlToImage, publishedAt: article.publishedAt, content: article.content))
+        }
+        return articleArr
+    }
+}

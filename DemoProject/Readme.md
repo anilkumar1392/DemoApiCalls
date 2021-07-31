@@ -42,7 +42,10 @@ Navigation:
 Api Call:
     Api Helper
     
-TableView Cell
-  NewHeadlineCell
+TableViewCell
+    NewHeadlineCell
+    
+LocalDB:
+    CoreData
     
 

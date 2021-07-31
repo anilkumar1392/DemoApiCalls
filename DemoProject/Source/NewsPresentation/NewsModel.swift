@@ -14,7 +14,7 @@ struct NewsResult: Decodable {
 }
 
 struct Article: Decodable{
-    let source: Source
+    let source: Source?
     let author: String?
     let title, articleDescription: String?
     let url: String?

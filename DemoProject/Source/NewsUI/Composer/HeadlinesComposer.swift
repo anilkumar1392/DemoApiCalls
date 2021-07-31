@@ -19,11 +19,14 @@ final class HeadlineVCComposer {
     
     private static func adaptNewsToCellType(forwardingTo controller : NewsHeadlinesVC, imageLoader: NewsImageDataLoader) -> ([Article]) -> Void{
         return { [weak controller] news in
-            controller?.tableModel = news.map { model in
-                NewsHeadlineCellController(viewModel: NewsImageViewModel(model: model, imageLoader: imageLoader, imageTransformer: UIImage.init))
+            ArticleDBHelper.saveArticles(articles: news) {
+                controller?.tableModel = news.map { model in
+                    NewsHeadlineCellController(viewModel: NewsImageViewModel(model: model, imageLoader: imageLoader, imageTransformer: UIImage.init))
+                }
             }
         }
     }
+
 }
 
 private extension NewsHeadlinesVC {
