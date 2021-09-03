@@ -31,6 +31,7 @@ Extra points for animations, UI and better user experience.
 Answers:
 
 Architecture Used: MVVM
+Principles: SOLID, Breakdown
 Controllers :- 
     1. NewsHeadlinesVC
     2. NewsHeadlineCellController

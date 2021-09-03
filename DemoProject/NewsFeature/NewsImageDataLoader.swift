@@ -13,6 +13,5 @@ public protocol NewsImageDataLoaderTask {
 
 public protocol NewsImageDataLoader {
     typealias Result = Swift.Result<Data, Error>
-    
     func loadImageData(from url: String, completion: @escaping (Result) -> Void) -> NewsImageDataLoaderTask
 }
